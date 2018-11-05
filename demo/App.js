@@ -1,49 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from "react";
+import { StyleSheet, View, TextInput, Image } from "react-native";
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+const image = require("./src/images/bam.png");
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={styles.pageContainer}>
+        <View style={styles.imageContainer}>
+          <Image resizeMode="contain" style={styles.image} source={image} />
+        </View>
+        <View style={styles.textInputContainer}>
+          <TextInput placeholder="Ecrivez quelquechose" />
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  pageContainer: {
+    paddingTop: 50,
+    paddingHorizontal: 20
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  imageContainer: {
+    alignItems: "center",
+    width: "100%"
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  image: {
+    width: "100%"
   },
+  textInputContainer: {
+    alignItems: "center",
+    borderWidth: 1,
+    borderRadius: 4,
+    paddingVertical: 20
+  }
 });
