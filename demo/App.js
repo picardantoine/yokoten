@@ -7,6 +7,13 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.pageContainer}>
+        <View style={{ width: "100%" }}>
+          <Image
+            style={styles.imageContainer}
+            resizeMode="center"
+            source={image}
+          />
+        </View>
         <View style={styles.textInputContainer}>
           <TextInput placeholder="Ecrivez quelquechose" />
         </View>
@@ -19,6 +26,10 @@ const styles = StyleSheet.create({
   pageContainer: {
     paddingTop: 20,
     paddingHorizontal: 20
+  },
+  imageContainer: {
+    width: "100%",
+    height: 400
   },
   textInputContainer: {
     alignItems: "center",
