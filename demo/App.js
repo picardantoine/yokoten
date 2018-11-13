@@ -1,23 +1,25 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TextInput, Image } from "react-native";
+import { ScrollView, StyleSheet, View, TextInput, Image } from "react-native";
 
 const image = require("./src/images/bam.png");
 
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.pageContainer}>
-        <View style={{ width: "100%" }}>
-          <Image
-            style={styles.imageContainer}
-            resizeMode="center"
-            source={image}
-          />
+      <ScrollView>
+        <View style={styles.pageContainer}>
+          <View style={{ width: "100%" }}>
+            <Image
+              style={styles.imageContainer}
+              resizeMode="center"
+              source={image}
+            />
+          </View>
+          <View style={styles.textInputContainer}>
+            <TextInput placeholder="Ecrivez quelquechose" />
+          </View>
         </View>
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder="Ecrivez quelquechose" />
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
