@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ScrollView, StyleSheet, View, TextInput, Image } from "react-native";
+import KeyboardSpacer from "react-native-keyboard-spacer";
 
 const image = require("./src/images/bam.png");
 
@@ -19,6 +20,7 @@ export default class App extends Component<Props> {
             <TextInput placeholder="Ecrivez quelquechose" />
           </View>
         </View>
+        <KeyboardSpacer />
       </ScrollView>
     );
   }
